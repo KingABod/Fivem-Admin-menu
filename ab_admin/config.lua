@@ -1,0 +1,31 @@
+Config = {}
+
+Config.Discord = "discord.gg/put_your_server_invite_url_here"
+
+Config.BanTable = 'ab_bans'
+
+Config.UseAnimation = true
+
+Config.Messages = {
+    Tx = 'Server Admin',
+}
+
+Config.Command = {
+    Enable = true,
+    UseRadial = true,
+    Command = 'ban'
+}
+
+Config.AdminSystem = {
+    "license:4d102cf2ec13a72f560ba0c2a912708c7e844904"
+}
+
+Config.Bans = {
+    { label = '2 HOURS',   value = 120 },
+    { label = '8 HOURS',   value = 480 },
+    { label = '1 DAY',     value = 1440 },
+    { label = '2 DAYS',    value = 2880 },
+    { label = '1 WEEK',    value = 10080 },
+    { label = '2 WEEKS',   value = 20160 },
+    { label = 'Permanent', value = 0 },
+}
