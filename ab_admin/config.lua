@@ -17,7 +17,7 @@ Config.Command = {
 }
 
 Config.AdminSystem = {
-    "license:4d102cf2ec13a72f560ba0c2a912708c7e844904"
+    "license:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 
 Config.Bans = {
