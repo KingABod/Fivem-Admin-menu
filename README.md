@@ -36,3 +36,5 @@ Config.AdminSystem: List of authorized admin licenses.
 Config.Bans: List of available ban durations (from 2 hours to permanent). Database
 
 The `ab_bans` table is a simple table that stores the license, reason, expiration time (0 = permanent), and ban date—with an index on the license to ensure fast lookups during every login attempt.
+
+#ab_dev
