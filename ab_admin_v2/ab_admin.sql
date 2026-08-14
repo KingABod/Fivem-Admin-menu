@@ -10,9 +10,6 @@ CREATE TABLE IF NOT EXISTS `ab_bans` (
     INDEX `idx_license` (`license`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- If you already have the old ab_bans table (no `admin` column), run this once:
--- ALTER TABLE `ab_bans` ADD COLUMN `admin` VARCHAR(100) NOT NULL DEFAULT 'Unknown' AFTER `reason`;
-
 CREATE TABLE IF NOT EXISTS `ab_admin_logs` (
     `id`        INT(11)      NOT NULL AUTO_INCREMENT,
     `admin`     VARCHAR(100) NOT NULL,
