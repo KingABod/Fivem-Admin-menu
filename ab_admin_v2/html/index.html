@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AB Admin</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app" class="app">
+  <div class="app-panel">
+    <div class="scanline"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">AB</div>
+        <div class="brand-text">
+          <h1 id="uiTitle">AB ADMIN</h1>
+          <p id="uiSubtitle">Moderation Terminal</p>
+        </div>
+      </div>
+
+      <div class="topbar-mid">
+        <span class="case-tag" id="caseTag">CASE #000000</span>
+        <span class="live-indicator"><i class="live-dot"></i>LIVE</span>
+        <span class="clock" id="clock">00:00:00</span>
+      </div>
+
+      <button class="icon-btn close-btn" id="closeBtn" title="Close (ESC)">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+    </header>
+
+    <div class="body">
+      <nav class="sidenav">
+        <button class="nav-item active" data-tab="dashboard" title="Dashboard">
+          <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v4h-7zM13 11h7v9h-7zM4 14h7v6H4z"/></svg>
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-item" data-tab="players" title="Players">
+          <svg viewBox="0 0 24 24"><path d="M8 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM17 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.6 1.9-4.8 4.4-5.3.9.5 1.6 1.3 1.6 2.3v3"/></svg>
+          <span>Players</span>
+        </button>
+        <button class="nav-item" data-tab="bans" title="Bans">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>
+          <span>Bans</span>
+        </button>
+        <button class="nav-item" data-tab="logs" title="Activity">
+          <svg viewBox="0 0 24 24"><path d="M4 19V5a1 1 0 0 1 1-1h9l6 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M14 4v5h5M8 13h8M8 16h5"/></svg>
+          <span>Activity</span>
+        </button>
+      </nav>
+
+      <main class="content">
+
+        <!-- DASHBOARD -->
+        <section class="tab active" id="tab-dashboard">
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-label">Players Online</span>
+              <span class="stat-value" id="statOnline">0</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Active Bans</span>
+              <span class="stat-value" id="statBans">0</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Permanent Bans</span>
+              <span class="stat-value" id="statPerma">0</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Actions Logged</span>
+              <span class="stat-value" id="statLogs">0</span>
+            </div>
+          </div>
+
+          <div class="panel-block">
+            <div class="panel-block-head">
+              <h2>Recent Activity</h2>
+              <button class="text-btn" data-tab-jump="logs">View all →</button>
+            </div>
+            <div id="dashRecentLogs" class="log-list compact"></div>
+          </div>
+        </section>
+
+        <!-- PLAYERS -->
+        <section class="tab" id="tab-players">
+          <div class="toolbar">
+            <div class="search-wrap">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              <input type="text" id="playerSearch" placeholder="Search by name, ID or license…" />
+            </div>
+            <button class="ghost-btn" id="refreshPlayers">
+              <svg viewBox="0 0 24 24"><path d="M4 4v6h6M20 20v-6h-6"/><path d="M5 15a8 8 0 0 0 14.3 3.4M19 9A8 8 0 0 0 4.7 5.6"/></svg>
+              Refresh
+            </button>
+          </div>
+          <div id="playersList" class="record-list"></div>
+          <div class="empty-state" id="playersEmpty" hidden>
+            <p>No players match that search.</p>
+          </div>
+        </section>
+
+        <!-- BANS -->
+        <section class="tab" id="tab-bans">
+          <div class="toolbar">
+            <div class="search-wrap">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              <input type="text" id="banSearch" placeholder="Search by license or reason…" />
+            </div>
+            <button class="ghost-btn" id="refreshBans">
+              <svg viewBox="0 0 24 24"><path d="M4 4v6h6M20 20v-6h-6"/><path d="M5 15a8 8 0 0 0 14.3 3.4M19 9A8 8 0 0 0 4.7 5.6"/></svg>
+              Refresh
+            </button>
+          </div>
+          <div id="bansList" class="record-list"></div>
+          <div class="empty-state" id="bansEmpty" hidden>
+            <p>No active bans on record.</p>
+          </div>
+        </section>
+
+        <!-- LOGS -->
+        <section class="tab" id="tab-logs">
+          <div class="toolbar">
+            <span class="toolbar-title">Last 50 admin actions</span>
+            <button class="ghost-btn" id="refreshLogs">
+              <svg viewBox="0 0 24 24"><path d="M4 4v6h6M20 20v-6h-6"/><path d="M5 15a8 8 0 0 0 14.3 3.4M19 9A8 8 0 0 0 4.7 5.6"/></svg>
+              Refresh
+            </button>
+          </div>
+          <div id="logsList" class="log-list"></div>
+          <div class="empty-state" id="logsEmpty" hidden>
+            <p>No actions logged yet.</p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- Toast host -->
+<div id="toastHost" class="toast-host"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
