@@ -37,4 +37,8 @@ Config.Bans: List of available ban durations (from 2 hours to permanent). Databa
 
 The `ab_bans` table is a simple table that stores the license, reason, expiration time (0 = permanent), and ban date—with an index on the license to ensure fast lookups during every login attempt.
 
+<img width="1021" height="652" alt="image" src="https://github.com/user-attachments/assets/22cc5225-8fc4-47e1-b45d-abf92a57eafe" />
+
+<img width="1020" height="679" alt="image" src="https://github.com/user-attachments/assets/a71815d1-9043-43f0-9063-f46d62ff2841" />
+
 #ab_dev
