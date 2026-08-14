@@ -50,11 +50,9 @@ Customizable Settings (config.lua)
 - `Config.Command`: Command activation, radial menu activation, and command name.
 - `Config.AdminSystem`: List of autho
 
-#**Ban**
+#**UI**
 <img width="1021" height="652" alt="image" src="https://github.com/user-attachments/assets/22cc5225-8fc4-47e1-b45d-abf92a57eafe" />
 <img width="1020" height="679" alt="image" src="https://github.com/user-attachments/assets/a71815d1-9043-43f0-9063-f46d62ff2841" />
-
-#**UI**
 <img width="2559" height="1439" alt="image" src="https://github.com/user-attachments/assets/570ed28c-0f74-49d6-98a2-f2aafa674c2d" />
 <img width="2559" height="1439" alt="image" src="https://github.com/user-attachments/assets/bdb87a19-2484-4722-81b7-357ded16856f" />
 <img width="2556" height="1439" alt="image" src="https://github.com/user-attachments/assets/4d93656d-d81d-4515-ba38-588a4dfaba39" />
